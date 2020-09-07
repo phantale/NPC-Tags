@@ -1,3 +1,5 @@
+package Demo;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,7 @@ public class Demo {
 
     public static void main(String args[]) {
         //initialise GUI
-        controller = new Controller();
+        controller = Controller.getInstance();
         setupInterface();
 
         //main loop
@@ -23,7 +25,7 @@ public class Demo {
 
     private static void setupInterface(){
         //Create the Frame
-        JFrame frame = new JFrame("Demo GUI");
+        JFrame frame = new JFrame("Demo.Demo GUI");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 400);
 

@@ -1,22 +1,39 @@
+package Demo;
+
+import NPCTags.NPC;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.ArrayList;
+import java.util.stream.IntStream;
 
 public class Controller {
+    private static Controller instance = null;
+
     private final Timer timer = new Timer();
     public NPC[] NPCs;
     public int hour;
     public int minute;
 
-    public Controller(){
+    private Controller(){
         // Init time of day to midnight
         this.hour = 0;
         this.minute = 0;
     }
 
+    public static Controller getInstance(){
+        if (instance == null) instance = new Controller();
+        return instance;
+    }
+
+    /** ===================================== METHODS ======================================= */
+
     public void setNPCs(int numNPCs){
-        // Generate NPCs
+        ArrayList<NPC> npcs = new ArrayList<>();
+        //generate numNPCs new NPCTags.NPC objects and add to npcs array
+        IntStream.rangeClosed(1, numNPCs).forEach(num -> npcs.add(new NPC(true)));
 
         //set NPCs field
+        this.NPCs = npcs.toArray(new NPC[npcs.size()]);
     }
 
     private void updateSimTime(){

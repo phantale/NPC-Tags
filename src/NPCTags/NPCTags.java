@@ -1,13 +1,15 @@
-// Wrapper class to hold the various tags for an NPC
-public class TagList {
+package NPCTags;
+
+// Wrapper class to hold the various tags for an NPCTags.NPC
+public class NPCTags {
 
     private Tag job;
     private Tag[] jMods, downtime, dMods, sleepMods;
 
-    public TagList(Tag job, Tag[] jMods, Tag[] downtime, Tag[] dMods, Tag[] sleepMods){
+    public NPCTags(Tag job, Tag[] jMods, Tag[] downtime, Tag[] dMods, Tag[] sleepMods){
         this.job = job;
         this.jMods = jMods;
-        this. downtime = downtime;
+        this.downtime = downtime;
         this.dMods = dMods;
         this.sleepMods = sleepMods;
     }
